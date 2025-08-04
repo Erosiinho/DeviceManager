@@ -1,0 +1,9 @@
+services:
+  wakeapi:
+    image: registry.ealb.fr/wakeapi:latest
+    network_mode: host
+    volumes:
+      - ./config.json:/app/config.json:ro
+    environment:
+      - DEFAULT_CONFIG_PATH=/app/config.json
+      - HTTP_PORT=8089
