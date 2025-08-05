@@ -42,10 +42,10 @@ The path to this config file is defined via the `DEFAULT_CONFIG_PATH` environmen
 All routes are prefixed with `/api/v1`.
 
 | Method | Route                       | Description                          |
-| ------ | --------------------------- | ------------------------------------ |
+|--------| --------------------------- | ------------------------------------ |
 | GET    | `/api/v1/devices`           | Returns the list of devices          |
-| POST   | `/api/v1/devices/:id/start` | Powers on the device via Wake-on-LAN |
-| POST   | `/api/v1/devices/:id/stop`  | Shuts down the device via SSH        |
+| GET    | `/api/v1/devices/:id/start` | Powers on the device via Wake-on-LAN |
+| GET    | `/api/v1/devices/:id/stop`  | Shuts down the device via SSH        |
 | GET    | `/api/v1/devices/:id/ping`  | Checks if the device is online       |
 
 > ⚠️ The `id` field in the URL must match the one defined in the JSON config.
