@@ -1,6 +1,6 @@
-# WakeAPI 🔌💻
+# DeviceManager 🔌💻
 
-**WakeAPI** is a minimalist REST API to control the power state of your machines using their unique identifier.
+**DeviceManager** is a minimalist REST API to control the power state of your machines using their unique identifier.
 It allows you to **power on** (via Wake-on-LAN), **shut down** (via SSH), and **check the status** (via ping) of a configured device.
 
 ---
@@ -67,8 +67,8 @@ The API is dockerized and ready to use. Just define the two required environment
 
 ```yaml
 services:
-  wakeapi:
-    image: wakeapi:latest
+  devicemanager:
+    image: devicemanager:latest
     environment:
       - DEFAULT_CONFIG_PATH=/app/config.json
       - HTTP_PORT=8089
