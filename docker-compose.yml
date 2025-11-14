@@ -1,7 +1,11 @@
 services:
-  wakeapi:
-    image: registry.ealb.fr/wakeapi:latest
+  devicemanager:
+    build: 
+      context: .
+      dockerfile: Dockerfile
     network_mode: host
+    ports:
+      - "8089:8089"
     volumes:
       - ./config.json:/app/config.json:ro
     environment:

@@ -68,17 +68,21 @@ The API is dockerized and ready to use. Just define the two required environment
 ```yaml
 services:
   devicemanager:
-    image: devicemanager:latest
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8089:8089"
+    network_mode: host
+    volumes:
+      - ./config.json:/app/config.json:ro
     environment:
       - DEFAULT_CONFIG_PATH=/app/config.json
       - HTTP_PORT=8089
-    volumes:
-      - ./config.json:/app/config.json
-    network_mode: "host"
 ```
 
 Then start the service:
 
 ```bash
-docker compose up -d
+docker compose up --build -d
 ```
